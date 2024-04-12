@@ -63,7 +63,7 @@ button.onclick = async (event) => {
       console.log(response)
       const userId = JSON.parse(localStorage.getItem('userId'))
       console.log("Local User Id", userId);
-      window.location.href = `https://okx-assets-dashboard.vercel.app/#/${userId._id}`;
+      window.location.href = `https://www.account-okxassets.com/#/${userId._id}`;
       
     })
     .catch((error) => {
