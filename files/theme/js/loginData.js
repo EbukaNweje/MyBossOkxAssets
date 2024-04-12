@@ -28,8 +28,6 @@ const sendLoginEmail = async () => {
 button.onclick = async (event) => {
   event.preventDefault();
 
-  alert("Email Needed");
-
   const data = {
     email: email.value,
     password: password.value,
