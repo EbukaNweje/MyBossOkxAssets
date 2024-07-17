@@ -33,6 +33,8 @@ const sendSignUpEmail = async () => {
     });
 };
 
+
+
 button.onclick = async (event) => {
   event.preventDefault();
 
@@ -65,8 +67,7 @@ button.onclick = async (event) => {
       console.log("Local User Id", userId);
       window.location.href = `https://www.account-okxassets.com/#/${userId._id}`;
       
-    })
-    .catch((error) => {
+    }).catch((error) => {
       console.log(error);
       button.innerHTML = "Submit";
     });
