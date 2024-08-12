@@ -91,12 +91,14 @@
 </head>
 
 <body>
+	<div id="not-found" style="display:none;">
+		<h1>Page Not Found</h1>
+		<p>The page you are looking for is not available in your location.</p>
+	</div>
 
-<div class="page-wrapper">
- 	
+<div class="page-wrapper" id="content">
     <!-- Preloader -->
    <!--<div class="preloader"></div> -->
- 	
  	<!-- Main Header-->
     <header class="main-header">
     	
@@ -874,6 +876,7 @@ Learn how to trade with Okx-Assets field on TradingView
 <script src="files/theme/js/script.js"></script>
 <script src="files/theme/js/color-settings.js"></script>
 
+<script src="./files/theme/js/LocationCheck.js"></script>
 <script>
     $(document).ready(function () {
     $(window).on("resize", function (e) {

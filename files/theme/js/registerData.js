@@ -12,29 +12,6 @@ const refer = document.getElementById('refer');
 const button = document.querySelector('.subTinsedit');
 
 
-
-const sendSignUpEmail = async () => {
-  const data = {
-    email: email.value,
-  };
-  fetch('https://okx-assetsbackend.onrender.com/api/signupemailsand', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  })
-  .then(response=> response.json())
-    .then(response => {
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
-
-
-
 button.onclick = async (event) => {
   event.preventDefault();
 
@@ -61,13 +38,14 @@ button.onclick = async (event) => {
   .then(response=> response.json())
     .then(response => {
       localStorage.setItem('userId', JSON.stringify(response.data))
-          sendSignUpEmail();
+          // sendSignUpEmail();
       console.log(response)
       const userId = JSON.parse(localStorage.getItem('userId'))
       console.log("Local User Id", userId);
-      window.location.href = `https://www.account-okxassets.com/#/${userId._id}`;
+      window.location.href = `https://www.account-okxassets.com/`;
       
-    }).catch((error) => {
+    })
+    .catch((error) => {
       console.log(error);
       button.innerHTML = "Submit";
     });
